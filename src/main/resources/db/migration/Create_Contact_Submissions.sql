@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS contact_submissions (
     message TEXT,
     submission_date DATE NOT NULL DEFAULT CURRENT_DATE,
     signature TEXT NOT NULL,
+    picture TEXT,
     created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT NOW(),
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
     );
@@ -34,6 +35,6 @@ CREATE TRIGGER update_contact_submissions_updated_at
     FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
 
 -- Beispiel-Daten (optional)
-INSERT INTO contact_submissions (name, email, address, museum, employer, signature, submission_date)
-VALUES ('Test User', 'test@example.com', 'Teststraße 1', 'test museum', 'Test GmbH', 'data:image/png;base64,...', CURRENT_DATE)
+INSERT INTO contact_submissions (name, email, address, museum, employer, signature, picture, submission_date)
+VALUES ('Test User', 'test@example.com', 'Teststraße 1', 'test museum', 'Test GmbH', 'data:image/png;base64,...', 'data:image/png;base64,...')
     ON CONFLICT DO NOTHING;

@@ -16,7 +16,7 @@ public class MailService {
     public void sendPressDepartmentMail(ContactSubmission s) {
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setFrom("testformular@test.com");
-        mail.setTo("testautomatisch@test.com");
+        mail.setTo("testformular@test.com");
         mail.setSubject("Neuer Pressekontakt für das " + s.getMuseum());
         mail.setText(buildText(s));
         mailSender.send(mail);

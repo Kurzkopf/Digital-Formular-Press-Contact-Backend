@@ -43,6 +43,9 @@ public class ContactSubmission {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String signature;
 
+    @Column(columnDefinition = "TEXT")
+    private String picture;
+
     @Column(nullable = false, updatable = false)
     private LocalDateTime createdAt;
 

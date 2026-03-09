@@ -29,6 +29,7 @@ public class ContactSubmissionService {
         submission.setMessage(request.getMessage());
         submission.setSubmissionDate(request.getDate());
         submission.setSignature(request.getSignature());
+        submission.setPicture(request.getPicture());
 
         ContactSubmission saved = repository.save(submission);
 

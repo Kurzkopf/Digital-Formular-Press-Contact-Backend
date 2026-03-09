@@ -33,4 +33,6 @@ public class ContactSubmissionRequest {
 
     @NotBlank(message = "Unterschrift ist erforderlich")
     private String signature;
+
+    private String picture;
 }
