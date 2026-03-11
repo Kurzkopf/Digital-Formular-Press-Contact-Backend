@@ -36,5 +36,5 @@ CREATE TRIGGER update_contact_submissions_updated_at
 
 -- Beispiel-Daten (optional)
 INSERT INTO contact_submissions (name, email, address, museum, employer, signature, picture, submission_date)
-VALUES ('Test User', 'test@example.com', 'Teststraße 1', 'test museum', 'Test GmbH', 'data:image/png;base64,...', 'data:image/png;base64,...')
+VALUES ('Test User', 'test@example.com', 'Teststraße 1', 'test museum', 'Test GmbH', 'data:image/png;base64,...', 'data:image/png;base64,...', CURRENT_DATE)
     ON CONFLICT DO NOTHING;

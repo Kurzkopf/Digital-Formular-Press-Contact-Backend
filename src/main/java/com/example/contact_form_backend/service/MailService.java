@@ -35,6 +35,14 @@ public class MailService {
         mailSender.send(mail);
     }
 
+    private String fotoMessage(ContactSubmission s) {
+        if (s.getPicture() != null) {
+            return "Anmerkung: " + "Es gab Komplikationen an der Kasse. Das Foto des Presseausweises befindet sich auf der Adminpage.";
+        } else {
+            return "";
+        }
+    }
+
     private String buildText(ContactSubmission s) {
         return "ID: " + s.getId() + "\n"
                 + "Datum: " + s.getSubmissionDate() + "\n"
@@ -43,7 +51,8 @@ public class MailService {
                 + "Museum: " + s.getMuseum() + "\n"
                 + "Adresse: " + s.getAddress() + "\n"
                 + "Arbeitgeber: " + s.getEmployer() + "\n"
-                + "Nachricht: " + (s.getMessage() == null ? "" : s.getMessage()) + "\n";
+                + "Nachricht: " + (s.getMessage() == null ? "" : s.getMessage()) + "\n"
+                + fotoMessage(s) + "\n";
     }
 }
 
